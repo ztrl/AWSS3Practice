@@ -37,7 +37,7 @@ public class TestController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getImage(@RequestParam(name = "key", required = false, defaultValue = KEY) String key) {
+    public ResponseEntity<?> getImage(@RequestParam(name = "key", required = false, defaultValue = KEY) String key) throws AmazonServiceException {
         log.info("Key: " + key);
         GetObjectRequest getObjectRequest = new GetObjectRequest(bucket.getName(), key);
 
